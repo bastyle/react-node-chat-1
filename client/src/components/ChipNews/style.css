@@ -1,0 +1,22 @@
+.chip-news {
+  align-items: flex-start;
+  background-color: #e5eeff;
+  border-radius: 20px;
+  display: inline-flex;
+  gap: 10px;
+  padding: 3px 8px;
+  position: relative;
+}
+
+.chip-news .support {
+  color: #3047ec;
+  font-family: "Inter", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 21px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}

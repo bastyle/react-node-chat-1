@@ -1,0 +1,632 @@
+.header {
+  align-items: center;
+  background-color: var(--intercom-brand-main);
+  display: flex;
+  gap: 30px;
+  position: relative;
+  width: 423px;
+}
+
+.header .text-wrapper {
+  color: var(--white);
+  font-family: "Font Awesome 6 Sharp-Regular", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 18px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.header .widget-header {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 14px;
+  position: relative;
+}
+
+.header .div {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.header .ellipse-wrapper {
+  align-items: flex-start;
+  border: 3px solid;
+  border-color: var(--intercom-brand-main);
+  border-radius: 125px;
+  display: flex;
+  flex-direction: column;
+  gap: 12.5px;
+  justify-content: flex-end;
+  margin-bottom: -3px;
+  margin-left: -3px;
+  margin-top: -3px;
+  position: relative;
+  width: 46px;
+}
+
+.header .ellipse {
+  height: 40px;
+  object-fit: cover;
+  position: relative;
+  width: 40px;
+}
+
+.header .img-wrapper {
+  align-items: flex-start;
+  border: 3px solid;
+  border-color: var(--intercom-brand-main);
+  border-radius: 125px;
+  display: flex;
+  flex-direction: column;
+  gap: 12.5px;
+  justify-content: flex-end;
+  margin-bottom: -3px;
+  margin-top: -3px;
+  position: relative;
+  width: 46px;
+}
+
+.header .avatars-2 {
+  align-items: flex-start;
+  border: 3px solid;
+  border-color: var(--intercom-brand-main);
+  border-radius: 125px;
+  display: flex;
+  flex-direction: column;
+  gap: 12.5px;
+  justify-content: flex-end;
+  margin-bottom: -3px;
+  margin-right: -3px;
+  margin-top: -3px;
+  position: relative;
+  width: 46px;
+}
+
+.header .instance-node {
+  margin-bottom: -2.4px !important;
+  margin-left: -2.4px !important;
+  margin-right: -2.4px !important;
+  margin-top: -2.4px !important;
+  position: relative !important;
+  width: 36.8px !important;
+}
+
+.header .avatars-3 {
+  align-items: flex-start;
+  border: 3px solid;
+  border-color: var(--intercom-brand-main);
+  border-radius: 125px;
+  display: flex;
+  flex-direction: column;
+  gap: 12.5px;
+  justify-content: flex-end;
+  margin-bottom: -3px;
+  margin-left: -3px;
+  margin-right: -3px;
+  margin-top: -3px;
+  position: relative;
+  width: 46px;
+}
+
+.header .frame {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  position: relative;
+}
+
+.header .bothrs {
+  color: var(--intercom-header-title);
+  font-family: var(--header-title-font-family);
+  font-size: var(--header-title-font-size);
+  font-style: var(--header-title-font-style);
+  font-weight: var(--header-title-font-weight);
+  letter-spacing: var(--header-title-letter-spacing);
+  line-height: var(--header-title-line-height);
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.header .frame-2 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 4px;
+  position: relative;
+}
+
+.header .text-wrapper-2 {
+  color: var(--intercom-header-icon);
+  font-family: "Font Awesome 6 Pro-Light", Helvetica;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 14px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.header .text-wrapper-3 {
+  color: var(--intercom-header-body-text);
+  font-family: var(--header-subtitle-font-family);
+  font-size: var(--header-subtitle-font-size);
+  font-style: var(--header-subtitle-font-style);
+  font-weight: var(--header-subtitle-font-weight);
+  letter-spacing: var(--header-subtitle-letter-spacing);
+  line-height: var(--header-subtitle-line-height);
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.header .frame-3 {
+  position: relative;
+}
+
+.header .AI-label {
+  align-items: center;
+  background-color: var(--intercom-header-icon-bg);
+  border-radius: 6px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  padding: 6px 4px;
+  position: relative;
+}
+
+.header .text-wrapper-4 {
+  color: var(--intercom-header-icon-text);
+  font-family: "Inter", Helvetica;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.header .text-wrapper-5 {
+  color: var(--intercom-header-body-text);
+  font-family: var(--header-subtitle-font-family);
+  font-size: var(--header-subtitle-font-size);
+  font-style: var(--header-subtitle-font-style);
+  font-weight: var(--header-subtitle-font-weight);
+  letter-spacing: var(--header-subtitle-letter-spacing);
+  line-height: var(--header-subtitle-line-height);
+  margin-top: -0.5px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.header .ellipse-2 {
+  background-color: var(--intercom-operator-online);
+  border: 2px solid;
+  border-color: var(--intercom-brand-main);
+  border-radius: 6.5px;
+  height: 13px;
+  left: 91px;
+  position: absolute;
+  top: 47px;
+  width: 13px;
+}
+
+.header .frame-4 {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  position: relative;
+}
+
+.header .frame-5 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.header .title-2 {
+  color: var(--intercom-header-title);
+  flex: 1;
+  font-family: "Inter", Helvetica;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+}
+
+.header .text-wrapper-6 {
+  color: var(--white);
+  font-family: "Font Awesome 6 Sharp-Regular", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.header .text-wrapper-7 {
+  color: var(--intercom-header-title);
+  flex: 1;
+  font-family: var(--header-title-font-family);
+  font-size: var(--header-title-font-size);
+  font-style: var(--header-title-font-style);
+  font-weight: var(--header-title-font-weight);
+  letter-spacing: var(--header-title-letter-spacing);
+  line-height: var(--header-title-line-height);
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+}
+
+.header .avatars-4 {
+  align-items: flex-start;
+  border: 4.71px solid;
+  border-color: var(--intercom-brand-main);
+  border-radius: 196.22px;
+  display: flex;
+  flex-direction: column;
+  gap: 19.62px;
+  justify-content: flex-end;
+  margin-bottom: -4.71px;
+  margin-left: -4.71px;
+  margin-top: -4.71px;
+  position: relative;
+  width: 72.21px;
+}
+
+.header .img {
+  height: 62.79px;
+  object-fit: cover;
+  position: relative;
+  width: 62.79px;
+}
+
+.header .avatars-5 {
+  align-items: flex-start;
+  border: 4.71px solid;
+  border-color: var(--intercom-brand-main);
+  border-radius: 196.22px;
+  display: flex;
+  flex-direction: column;
+  gap: 19.62px;
+  justify-content: flex-end;
+  margin-bottom: -4.71px;
+  margin-top: -4.71px;
+  position: relative;
+  width: 72.21px;
+}
+
+.header .avatars-6 {
+  align-items: flex-start;
+  border: 4.71px solid;
+  border-color: var(--intercom-brand-main);
+  border-radius: 196.22px;
+  display: flex;
+  flex-direction: column;
+  gap: 19.62px;
+  justify-content: flex-end;
+  margin-bottom: -4.71px;
+  margin-right: -4.71px;
+  margin-top: -4.71px;
+  position: relative;
+  width: 72.21px;
+}
+
+.header .frame-6 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  position: relative;
+}
+
+.header .p {
+  color: var(--intercom-header-title);
+  font-family: "Inter", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.header .text-wrapper-8 {
+  color: var(--intercom-header-body-text);
+  font-family: var(--header-subtitle-font-family);
+  font-size: var(--header-subtitle-font-size);
+  font-style: var(--header-subtitle-font-style);
+  font-weight: var(--header-subtitle-font-weight);
+  letter-spacing: var(--header-subtitle-letter-spacing);
+  line-height: var(--header-subtitle-line-height);
+  opacity: 0.8;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.header .frame-7 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.header .frame-wrapper {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10.62px;
+  justify-content: flex-end;
+  position: relative;
+  width: 34px;
+}
+
+.header .div-wrapper {
+  background-color: #fff3d0;
+  border-radius: 17px;
+  height: 34px;
+  position: relative;
+  width: 34px;
+}
+
+.header .text-wrapper-9 {
+  color: #ffc421;
+  font-family: "Font Awesome 6 Sharp-Solid", Helvetica;
+  font-size: 21.2px;
+  font-weight: 400;
+  height: 24px;
+  left: 7px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 5px;
+  white-space: nowrap;
+  width: 16px;
+}
+
+.header .avatars-7 {
+  align-items: flex-start;
+  border: 3.06px solid;
+  border-color: var(--intercom-brand-main);
+  border-radius: 127.59px;
+  display: flex;
+  flex-direction: column;
+  gap: 12.76px;
+  justify-content: flex-end;
+  margin-bottom: -3.06px;
+  margin-left: -3.06px;
+  margin-top: -3.06px;
+  position: relative;
+  width: 46.95px;
+}
+
+.header .ellipse-3 {
+  height: 40.83px;
+  object-fit: cover;
+  position: relative;
+  width: 40.83px;
+}
+
+.header .avatars-8 {
+  align-items: flex-start;
+  border: 3.06px solid;
+  border-color: var(--intercom-brand-main);
+  border-radius: 127.59px;
+  display: flex;
+  flex-direction: column;
+  gap: 12.76px;
+  justify-content: flex-end;
+  margin-bottom: -3.06px;
+  margin-top: -3.06px;
+  position: relative;
+  width: 46.95px;
+}
+
+.header .avatars-9 {
+  align-items: flex-start;
+  border: 3.06px solid;
+  border-color: var(--intercom-brand-main);
+  border-radius: 127.59px;
+  display: flex;
+  flex-direction: column;
+  gap: 12.76px;
+  justify-content: flex-end;
+  margin-bottom: -3.06px;
+  margin-right: -3.06px;
+  margin-top: -3.06px;
+  position: relative;
+  width: 46.95px;
+}
+
+.header .frame-8 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 6px 0px;
+  position: relative;
+  width: 100%;
+}
+
+.header .text-wrapper-10 {
+  color: #f8f8f8;
+  font-family: var(--header-hero-font-family);
+  font-size: var(--header-hero-font-size);
+  font-style: var(--header-hero-font-style);
+  font-weight: var(--header-hero-font-weight);
+  letter-spacing: var(--header-hero-letter-spacing);
+  line-height: var(--header-hero-line-height);
+  margin-top: -1px;
+  opacity: 0.7;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.header .text-wrapper-11 {
+  color: #f8f8f8;
+  font-family: "Inter", Helvetica;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 40.8px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.header .text-wrapper-12 {
+  color: var(--intercom-header-title);
+  font-family: var(--header-hero-font-family);
+  font-size: var(--header-hero-font-size);
+  font-style: var(--header-hero-font-style);
+  font-weight: var(--header-hero-font-weight);
+  letter-spacing: var(--header-hero-letter-spacing);
+  line-height: var(--header-hero-line-height);
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.header.home-1 {
+  padding: 30px 32px 22px;
+}
+
+.header.operator-stamp {
+  padding: 20px;
+}
+
+.header.company-stamp {
+  padding: 20px;
+}
+
+.header.variant-9 {
+  padding: 20px;
+}
+
+.header.AI-bot-stamp {
+  padding: 20px;
+}
+
+.header.expanded-1 {
+  padding: 20px;
+}
+
+.header.home-2 {
+  padding: 30px 32px 22px;
+}
+
+.header.company {
+  padding: 20px;
+}
+
+.header.title {
+  padding: 28px 20px;
+}
+
+.header.operator-stamp .frame-3 {
+  color: var(--intercom-header-body-text);
+  font-family: var(--header-subtitle-font-family);
+  font-size: var(--header-subtitle-font-size);
+  font-style: var(--header-subtitle-font-style);
+  font-weight: var(--header-subtitle-font-weight);
+  letter-spacing: var(--header-subtitle-letter-spacing);
+  line-height: var(--header-subtitle-line-height);
+  margin-top: -1px;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.header.variant-9 .frame-3 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 6px;
+}
+
+.header.AI-bot-stamp .frame-3 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 6px;
+}
+
+.header.home-1 .frame-4 {
+  gap: 70px;
+}
+
+.header.operator-stamp .frame-4 {
+  gap: 26px;
+}
+
+.header.company-stamp .frame-4 {
+  gap: 26px;
+}
+
+.header.variant-9 .frame-4 {
+  gap: 26px;
+}
+
+.header.AI-bot-stamp .frame-4 {
+  gap: 26px;
+}
+
+.header.expanded-1 .frame-4 {
+  gap: 26px;
+}
+
+.header.home-2 .frame-4 {
+  gap: 70px;
+}
+
+.header.company .frame-4 {
+  gap: 26px;
+}
+
+.header.title .frame-4 {
+  gap: 26px;
+}
+
+.header.home-2 .frame-7 {
+  justify-content: space-between;
+}

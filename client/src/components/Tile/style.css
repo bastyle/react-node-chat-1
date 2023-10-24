@@ -1,0 +1,501 @@
+.tile {
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #00000024;
+  border-radius: 10px;
+  box-shadow: var(--shadows-shadow-card);
+  display: flex;
+  position: relative;
+  width: 460px;
+}
+
+.tile .frame-9 {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+}
+
+.tile .recent-message-2 {
+  align-self: stretch;
+  position: relative;
+}
+
+.tile .text-wrapper-13 {
+  color: var(--intercom-operator-message-text);
+  flex: 1;
+  font-family: var(--tile-title-font-family);
+  font-size: var(--tile-title-font-size);
+  font-style: var(--tile-title-font-style);
+  font-weight: var(--tile-title-font-weight);
+  letter-spacing: var(--tile-title-letter-spacing);
+  line-height: var(--tile-title-line-height);
+  margin-top: -1px;
+  position: relative;
+}
+
+.tile .icon {
+  color: var(--intercom-brand-main);
+  font-family: "Font Awesome 6 Pro-Solid", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 18.9px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.tile .frame-10 {
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.tile .overlap-group-wrapper {
+  height: 46.43px;
+  position: relative;
+  width: 48.88px;
+}
+
+.tile .overlap-group {
+  height: 51px;
+  left: -2px;
+  position: relative;
+  top: -3px;
+  width: 54px;
+}
+
+.tile .avatars-10 {
+  align-items: flex-start;
+  border: 2.44px solid;
+  border-color: #ffffff;
+  border-radius: 81.46px;
+  display: flex;
+  flex-direction: column;
+  gap: 8.15px;
+  justify-content: flex-end;
+  left: 23px;
+  position: absolute;
+  top: 20px;
+  width: 31px;
+}
+
+.tile .ellipse-4 {
+  height: 26.07px;
+  object-fit: cover;
+  position: relative;
+  width: 26.07px;
+}
+
+.tile .avatars-11 {
+  align-items: flex-start;
+  border: 2.44px solid;
+  border-color: #ffffff;
+  border-radius: 81.46px;
+  display: flex;
+  flex-direction: column;
+  gap: 8.15px;
+  justify-content: flex-end;
+  left: 11px;
+  position: absolute;
+  top: 0;
+  width: 31px;
+}
+
+.tile .avatars-12 {
+  align-items: flex-start;
+  border: 2.44px solid;
+  border-color: #ffffff;
+  border-radius: 81.46px;
+  display: flex;
+  flex-direction: column;
+  gap: 8.15px;
+  justify-content: flex-end;
+  left: 0;
+  position: absolute;
+  top: 20px;
+  width: 31px;
+}
+
+.tile .frame-11 {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 6px;
+  position: relative;
+}
+
+.tile .text-wrapper-14 {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  align-self: stretch;
+  color: var(--intercom-operator-message-text);
+  display: -webkit-box;
+  font-family: "Inter", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 21px;
+  margin-top: -1px;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+}
+
+.tile .text-wrapper-15 {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  align-self: stretch;
+  color: var(--intercom-stamp-text);
+  display: -webkit-box;
+  font-family: var(--tile-body-secundary-normal-font-family);
+  font-size: var(--tile-body-secundary-normal-font-size);
+  font-style: var(--tile-body-secundary-normal-font-style);
+  font-weight: var(--tile-body-secundary-normal-font-weight);
+  letter-spacing: var(--tile-body-secundary-normal-letter-spacing);
+  line-height: var(--tile-body-secundary-normal-line-height);
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+}
+
+.tile .icon-2 {
+  color: var(--intercom-brand-main);
+  font-family: "Font Awesome 6 Pro-Solid", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 18.9px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.tile .frame-12 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.tile .text-wrapper-16 {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  color: #000000;
+  display: -webkit-box;
+  font-family: var(--tile-body-large-font-family);
+  font-size: var(--tile-body-large-font-size);
+  font-style: var(--tile-body-large-font-style);
+  font-weight: var(--tile-body-large-font-weight);
+  letter-spacing: var(--tile-body-large-letter-spacing);
+  line-height: var(--tile-body-large-line-height);
+  margin-top: -1px;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.tile .frame-13 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.tile .text-wrapper-17 {
+  align-self: stretch;
+  color: var(--intercom-operator-message-text);
+  font-family: var(--tile-title-font-family);
+  font-size: var(--tile-title-font-size);
+  font-style: var(--tile-title-font-style);
+  font-weight: var(--tile-title-font-weight);
+  letter-spacing: var(--tile-title-letter-spacing);
+  line-height: var(--tile-title-line-height);
+  margin-top: -1px;
+  position: relative;
+}
+
+.tile .image {
+  align-self: stretch;
+  height: 208.91px;
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+}
+
+.tile .icon-3 {
+  position: relative;
+}
+
+.tile .the-intercom {
+  position: relative;
+}
+
+.tile .be-sure-to-check-out {
+  align-self: stretch;
+  position: relative;
+}
+
+.tile .when-you-migrate {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  align-self: stretch;
+  color: #000000;
+  display: -webkit-box;
+  font-family: var(--tile-body-large-font-family);
+  font-size: var(--tile-body-large-font-size);
+  font-style: var(--tile-body-large-font-style);
+  font-weight: var(--tile-body-large-font-weight);
+  height: 48.78px;
+  letter-spacing: var(--tile-body-large-letter-spacing);
+  line-height: var(--tile-body-large-line-height);
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+}
+
+.tile.recent-message {
+  align-items: center;
+  gap: 10px;
+  padding: 22px 24px;
+}
+
+.tile.news {
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.tile.send-message {
+  align-items: center;
+  gap: 10px;
+  padding: 22px 24px;
+}
+
+.tile.article {
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.tile.help {
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 20px;
+}
+
+.tile.recent-message .frame-9 {
+  gap: 10px;
+}
+
+.tile.news .frame-9 {
+  gap: 10px;
+}
+
+.tile.send-message .frame-9 {
+  gap: 10px;
+}
+
+.tile.article .frame-9 {
+  gap: 10px;
+}
+
+.tile.help .frame-9 {
+  gap: 14px;
+}
+
+.tile.recent-message .recent-message-2 {
+  color: var(--intercom-operator-message-text);
+  font-family: var(--tile-title-font-family);
+  font-size: var(--tile-title-font-size);
+  font-style: var(--tile-title-font-style);
+  font-weight: var(--tile-title-font-weight);
+  letter-spacing: var(--tile-title-letter-spacing);
+  line-height: var(--tile-title-line-height);
+  margin-top: -1px;
+}
+
+.tile.help .recent-message-2 {
+  align-items: flex-start;
+  background-color: #f1f1f1;
+  border-radius: 6px;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+.tile.recent-message .frame-10 {
+  align-items: center;
+  gap: 10px;
+}
+
+.tile.news .frame-10 {
+  align-items: center;
+  gap: 10px;
+}
+
+.tile.send-message .frame-10 {
+  align-items: center;
+  gap: 10px;
+}
+
+.tile.article .frame-10 {
+  align-items: center;
+  gap: 10px;
+}
+
+.tile.help .frame-10 {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0px 12px;
+}
+
+.tile.recent-message .frame-13 {
+  flex: 0 0 auto;
+  gap: 12px;
+}
+
+.tile.news .frame-13 {
+  align-self: stretch;
+  flex: 0 0 auto;
+  gap: 12px;
+  width: 100%;
+}
+
+.tile.send-message .frame-13 {
+  flex: 1;
+  flex-grow: 1;
+  gap: 6px;
+}
+
+.tile.article .frame-13 {
+  align-self: stretch;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #ebebeb;
+  flex: 0 0 auto;
+  gap: 12px;
+  padding: 20px;
+  width: 100%;
+}
+
+.tile.help .frame-13 {
+  flex: 0 0 auto;
+  gap: 12px;
+}
+
+.tile.recent-message .icon-3 {
+  width: 100%;
+}
+
+.tile.news .icon-3 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  width: 100%;
+}
+
+.tile.send-message .icon-3 {
+  color: var(--intercom-brand-main);
+  font-family: "Font Awesome 6 Pro-Solid", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 18.9px;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.tile.article .icon-3 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  width: 100%;
+}
+
+.tile.help .icon-3 {
+  width: 100%;
+}
+
+.tile.news .the-intercom {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 8px 8px;
+}
+
+.tile.article .the-intercom {
+  align-self: stretch;
+  color: var(--intercom-operator-message-text);
+  font-family: var(--tile-title-font-family);
+  font-size: var(--tile-title-font-size);
+  font-style: var(--tile-title-font-style);
+  font-weight: var(--tile-title-font-weight);
+  letter-spacing: var(--tile-title-letter-spacing);
+  line-height: var(--tile-title-line-height);
+  margin-top: -1px;
+}
+
+.tile.recent-message .be-sure-to-check-out {
+  display: -webkit-box;
+}
+
+.tile.news .be-sure-to-check-out {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.tile.send-message .be-sure-to-check-out {
+  display: -webkit-box;
+}
+
+.tile.article .be-sure-to-check-out {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: var(--intercom-stamp-text);
+  display: -webkit-box;
+  font-family: var(--tile-body-secundary-large-font-family);
+  font-size: var(--tile-body-secundary-large-font-size);
+  font-style: var(--tile-body-secundary-large-font-style);
+  font-weight: var(--tile-body-secundary-large-font-weight);
+  height: 48.81px;
+  letter-spacing: var(--tile-body-secundary-large-letter-spacing);
+  line-height: var(--tile-body-secundary-large-line-height);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tile.help .be-sure-to-check-out {
+  display: -webkit-box;
+}

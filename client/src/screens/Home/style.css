@@ -1,0 +1,224 @@
+.home {
+  background-color: #454547;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.home .overlap-group-wrapper {
+  background-color: #454547;
+  height: 1024px;
+  width: 1440px;
+}
+
+.home .overlap-group {
+  height: 1024px;
+  left: 161px;
+  position: relative;
+  width: 1240px;
+}
+
+.home .intercom {
+  height: 1024px;
+  left: 365px;
+  position: absolute;
+  top: 0;
+  width: 875px;
+  display: flex;
+  justify-content: center;
+}
+
+.home .intercom-widget-wrapper {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 1000px;
+  justify-content: flex-end;
+  left: 0;
+  position: absolute;
+  top: 12px;
+  width: 423px;
+}
+
+.home .intercom-widget {
+  align-items: flex-start;
+  border-radius: 18px;
+  box-shadow: var(--shadows-shadow-widget);
+  display: flex;
+  flex-direction: column;
+  height: 1000px;
+  overflow: hidden;
+  position: relative;
+  width: 423px;
+}
+
+.home .header-instance {
+  align-self: stretch !important;
+  background-color: var(--intercom-operator-online) !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+}
+
+.home .messages {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: #ffffff;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 206px;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.home .text-wrapper-13 {
+  color: var(--intercom-AI-label-message);
+  font-family: var(--header-hero-font-family);
+  font-size: var(--header-hero-font-size);
+  font-style: var(--header-hero-font-style);
+  font-weight: var(--header-hero-font-weight);
+  letter-spacing: var(--header-hero-letter-spacing);
+  line-height: var(--header-hero-line-height);
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.home .frame-9 {
+  align-items: center;
+  align-self: stretch;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  height: 601px;
+  justify-content: space-between;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.home .messages-2 {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  width: 383px;
+}
+
+.home .message {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  width: 100%;
+}
+
+.home .frame-10 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.home .frame-11 {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 6px;
+  position: relative;
+}
+
+.home .text-wrapper-14 {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  align-self: stretch;
+  color: var(--intercom-operator-message-text);
+  display: -webkit-box;
+  font-family: "Inter", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 21px;
+  margin-top: -1px;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+}
+
+.home .icon {
+  color: var(--intercom-operator-online);
+  font-family: "Font Awesome 6 Pro-Solid", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 18.9px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.home .line {
+  align-self: stretch;
+  height: 1.2px;
+  margin-bottom: -1.2px;
+  position: relative;
+  width: 100%;
+}
+
+.home .buttin {
+  align-items: center;
+  background-color: var(--intercom-operator-online);
+  border-radius: 10px;
+  box-shadow: var(--shadows-shadow-menu);
+  display: flex;
+  gap: 12px;
+  height: 60px;
+  justify-content: center;
+  padding: 12px 20px;
+  position: relative;
+  width: 181px;
+}
+
+.home .text-wrapper-15 {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  color: #ffffff;
+  display: -webkit-box;
+  font-family: "Inter", Helvetica;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 21px;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.home .icon-2 {
+  color: #ffffff;
+  font-family: "Font Awesome 6 Pro-Solid", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 18.9px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
