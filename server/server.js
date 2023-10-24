@@ -16,8 +16,8 @@ mongoose.connect(process.env.MONGODB_URL,{
     useUnifiedTopology : true
 }).then(()=>{
     console.log('connected to db');
-    const userTest = new UserModel({username:'Bastian', email:'bastian.bastias@gmail.com',password:'weCanTalk2023'})
-    /*userTest.save().then(doc => {
+    /*const userTest = new UserModel({username:'Bastian', email:'bastian.bastias@gmail.com',password:'weCanTalk2023'})
+    userTest.save().then(doc => {
         console.log('user saved:', doc);
       })
       .catch(error => {
