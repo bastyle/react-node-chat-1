@@ -1,7 +1,9 @@
 const express = require('express')
 const cors = require("cors")
 const { default: mongoose } = require('mongoose')
-const UserModel = require('./model/User')
+const UserModel = require('./model/userModel')
+const userRoutes = require("./routes/userRoutes");
+const messageRoutes = require("./routes/messages");
 require('dotenv').config()
 
 const app = express()
@@ -26,4 +28,16 @@ app.get("/api", (req, res)=>{
     res.json({"msg":"hello world!"})
 })
 
-app.listen(process.env.PORT, ()=>{console.log("server started on port: "+process.env.PORT+" ...")})
+app.use("/api/auth", userRoutes);
+app.use("/api/messages", messageRoutes);
+app.listen(process.env.PORT, ()=>
+    console.log("server started on port: "+process.env.PORT+" ...")
+);
+
+const io = socket(server, {
+    cors: {
+      origin: process.env.SOCKET_ORI,
+      credentials: true,
+    },
+  });
+  
