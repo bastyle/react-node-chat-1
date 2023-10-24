@@ -8,6 +8,13 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 // DB Connection
+mongoose.connect(process.env.MONGODB_URL,{
+    useNewUrlParser : true ,
+    useUnifiedTopology : true
+}).then(()=>{
+    console.log('connected to db');
+});
+//test endpoint 
 app.get("/api", (req, res)=>{
     res.json({"msg":"hello world!"})
 })
