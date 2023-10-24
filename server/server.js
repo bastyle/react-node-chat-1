@@ -4,6 +4,7 @@ const { default: mongoose } = require('mongoose')
 const UserModel = require('./model/userModel')
 const userRoutes = require("./routes/userRoutes");
 const messageRoutes = require("./routes/messages");
+const socket = require("socket.io");
 require('dotenv').config()
 
 const app = express()
@@ -16,12 +17,12 @@ mongoose.connect(process.env.MONGODB_URL,{
 }).then(()=>{
     console.log('connected to db');
     const userTest = new UserModel({username:'Bastian', email:'bastian.bastias@gmail.com',password:'weCanTalk2023'})
-    userTest.save().then(doc => {
+    /*userTest.save().then(doc => {
         console.log('user saved:', doc);
       })
       .catch(error => {
         console.error('Error saving user:', error);
-      });
+      });*/
 });
 //test endpoint 
 app.get("/api", (req, res)=>{
@@ -30,7 +31,7 @@ app.get("/api", (req, res)=>{
 
 app.use("/api/auth", userRoutes);
 app.use("/api/messages", messageRoutes);
-app.listen(process.env.PORT, ()=>
+const server = app.listen(process.env.PORT, ()=>
     console.log("server started on port: "+process.env.PORT+" ...")
 );
 
@@ -41,3 +42,17 @@ const io = socket(server, {
     },
   });
   
+  global.onlineUsers = new Map();
+  io.on("connection", (socket) => {
+    global.chatSocket = socket;
+    socket.on("add-user", (userId) => {
+      onlineUsers.set(userId, socket.id);
+    });
+  
+    socket.on("send-msg", (data) => {
+      const sendUserSocket = onlineUsers.get(data.to);
+      if (sendUserSocket) {
+        socket.to(sendUserSocket).emit("msg-recieve", data.msg);
+      }
+    });
+  });  
