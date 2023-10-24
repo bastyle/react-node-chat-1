@@ -2,6 +2,7 @@ const express = require('express')
 
 const cors = require("cors")
 const { default: mongoose } = require('mongoose')
+const UserModel = require('./model/User')
 require('dotenv').config()
 
 const app = express()
@@ -13,6 +14,14 @@ mongoose.connect(process.env.MONGODB_URL,{
     useUnifiedTopology : true
 }).then(()=>{
     console.log('connected to db');
+    //const UserModel = mongoose.model('UserModel', User)
+    const userTest = new UserModel({username:'Bastian', email:'bastian.bastias@gmail.com',password:'weCanTalk2023'})
+    userTest.save().then(doc => {
+        console.log('user saved:', doc);
+      })
+      .catch(error => {
+        console.error('Error saving user:', error);
+      });
 });
 //test endpoint 
 app.get("/api", (req, res)=>{
