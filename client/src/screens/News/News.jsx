@@ -6,7 +6,7 @@ import image1 from "../../static/img/image-4-1.png";
 import image2 from "../../static/img/image-4.png";
 import "./style.css";
 
-export const Intercom = () => {
+export const News = () => {
   return (
     <div className="news">
       <div className="news-widget">
@@ -40,7 +40,7 @@ export const Intercom = () => {
               image={image2}
               property1="news"
               text="Introducing a new file content source for Fin - PDF Uploads"
-              text1="When you migrate your articles to Intercom using our Zendesk migration tool – we&#39;ll now automatically create URL redirects from your previous URLs to your new Intercom articles."
+              text1="When you migrate your articles to News using our Zendesk migration tool – we&#39;ll now automatically create URL redirects from your previous URLs to your new News articles."
             />
           </div>
         </div>

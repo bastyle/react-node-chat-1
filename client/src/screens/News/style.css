@@ -2,7 +2,6 @@
   align-items: flex-end;
   display: flex;
   flex-direction: column;
-  /*gap: 20px;*/
   justify-content: center;
   position: relative;
   width: 715px;
@@ -14,7 +13,7 @@
   box-shadow: var(--shadows-shadow-widget);
   display: flex;
   flex-direction: column;
-  height: 1000px;
+  height: 100vh;
   overflow: hidden;
   position: relative;
   width: 715px;
