@@ -5,11 +5,17 @@ module.exports.login = async (req, res, next) => {
   try {
     const { username, password } = req.body;
     const user = await User.findOne({ username });
-    if (!user)
-      return res.json({ msg: "Incorrect Username or Password", status: false });
+    console.log("user??: "+user)
+    if (!user){
+        console.log("Incorrect Username or Password 1")
+        return res.json({ msg: "Incorrect Username or Password", status: false });
+    }      
     const isPasswordValid = await bcrypt.compare(password, user.password);
-    if (!isPasswordValid)
-      return res.json({ msg: "Incorrect Username or Password", status: false });
+    if (!isPasswordValid){
+        console.log("Incorrect Password")
+        return res.json({ msg: "Incorrect Username or Password", status: false });
+    }
+      
     delete user.password;
     return res.json({ status: true, user });
   } catch (ex) {
@@ -53,7 +59,7 @@ module.exports.getAllUsers = async (req, res, next) => {
   }
 };
 
-/*module.exports.setAvatar = async (req, res, next) => {
+module.exports.setAvatar = async (req, res, next) => {
   try {
     const userId = req.params.id;
     const avatarImage = req.body.image;
@@ -72,7 +78,7 @@ module.exports.getAllUsers = async (req, res, next) => {
   } catch (ex) {
     next(ex);
   }
-};*/
+};
 
 module.exports.logOut = (req, res, next) => {
   try {
