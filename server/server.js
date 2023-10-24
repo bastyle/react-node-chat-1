@@ -1,5 +1,4 @@
 const express = require('express')
-
 const cors = require("cors")
 const { default: mongoose } = require('mongoose')
 const UserModel = require('./model/User')
@@ -14,7 +13,6 @@ mongoose.connect(process.env.MONGODB_URL,{
     useUnifiedTopology : true
 }).then(()=>{
     console.log('connected to db');
-    //const UserModel = mongoose.model('UserModel', User)
     const userTest = new UserModel({username:'Bastian', email:'bastian.bastias@gmail.com',password:'weCanTalk2023'})
     userTest.save().then(doc => {
         console.log('user saved:', doc);
@@ -28,5 +26,4 @@ app.get("/api", (req, res)=>{
     res.json({"msg":"hello world!"})
 })
 
-//app.listen(5000, ()=>{console.log("server started on port 5000.")})
 app.listen(process.env.PORT, ()=>{console.log("server started on port: "+process.env.PORT+" ...")})
