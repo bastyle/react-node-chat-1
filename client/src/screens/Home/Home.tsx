@@ -5,14 +5,6 @@ import { News } from "../../screens/News";
 import "./style.css";
 
 export const Home = (): JSX.Element => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleLogin = () => {
-    // Add your login logic here
-    console.log('Email:', email);
-    console.log('Password:', password);
-  };
 
   return (
     <div className="home">

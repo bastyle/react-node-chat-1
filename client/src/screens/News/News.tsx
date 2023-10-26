@@ -6,7 +6,7 @@ import image1 from "../../static/img/image-4-1.png";
 import image2 from "../../static/img/image-4.png";
 import "./style.css";
 
-export const News = () => {
+export const News = (): JSX.Element => {
   return (
     <div className="news">
       <div className="news-widget">
@@ -36,6 +36,8 @@ export const News = () => {
             <Tile
               chipNewsChipNewsClassName="tile-3"
               chipNewsChipNewsClassNameOverride="tile-3"
+              chipNewsDivClassName="your-classname-here"
+              chipNewsDivClassNameOverride="your-classname-here"
               className="design-component-instance-node"
               image={image2}
               property1="news"
