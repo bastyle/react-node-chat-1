@@ -1,0 +1,68 @@
+.concrete-component-node {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-end;
+  position: relative;
+  width: 32px;
+}
+
+.concrete-component-node .div-wrapper {
+  background-color: #fff3d0;
+  border-radius: 16px;
+  height: 32px;
+  position: relative;
+  width: 32px;
+}
+
+.concrete-component-node .text-wrapper-12 {
+  color: #ffc421;
+  font-family: "Font Awesome 6 Sharp-Solid", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  height: 22px;
+  left: 7px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 4px;
+  white-space: nowrap;
+  width: 15px;
+}
+
+.concrete-component-node .img {
+  height: 32px;
+  object-fit: cover;
+  position: relative;
+  width: 32px;
+}
+
+.concrete-component-node .property-AI-last {
+  height: 34px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  transform: rotate(3.05deg) !important;
+  width: 34px !important;
+}
+
+.concrete-component-node .property-AI {
+  height: 32px !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 32px !important;
+}
+
+.concrete-component-node.person-3 {
+  border-radius: 100px;
+}
+
+.concrete-component-node.person-2 {
+  border-radius: 100px;
+}
+
+.concrete-component-node.person-1 {
+  border-radius: 100px;
+}

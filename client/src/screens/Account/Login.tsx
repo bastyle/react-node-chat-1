@@ -8,9 +8,10 @@ import "./style.css";
 
 interface LoginProps {
     toggleIsRegistering: () => void;
+    onLoginSuccess: (userData: any) => void;
 }
 
-export const Login: React.FC<LoginProps> = ({ toggleIsRegistering }) => {
+export const Login: React.FC<LoginProps> = ({ toggleIsRegistering, onLoginSuccess }) => {
     console.log("Rendering Login component");
     const navigate = useNavigate();
     const [values, setValues] = useState({ username: "", password: "" });
@@ -47,7 +48,6 @@ export const Login: React.FC<LoginProps> = ({ toggleIsRegistering }) => {
         event.preventDefault();
         if (validateForm()) {
             const { username, password } = values;
-            //console.log(username, password);
             const { data } = await axios.post(loginRoute, {
                 username,
                 password,
@@ -57,18 +57,14 @@ export const Login: React.FC<LoginProps> = ({ toggleIsRegistering }) => {
             }
             if (data.status === true) {
                 toast.success("Login successful!", toastOptions);
-                localStorage.setItem(
-                    process.env.REACT_APP_LOCALHOST_KEY || 'defaultKey',
-                    JSON.stringify(data.user)
-                );
-                navigate("/");
+                onLoginSuccess(data.user);
             }
         }
     };
 
 
     return (
-        <div>
+        <div className="login">
             <div className="messages">
                 <div className="text-wrapper-13">Login</div>
             </div>
@@ -87,7 +83,7 @@ export const Login: React.FC<LoginProps> = ({ toggleIsRegistering }) => {
                             </div>
                             <div className="icon"></div>
                         </label>
-                        <img className="line" alt="Line" src="/img/line-2-1.svg" />
+                        <div className="line"></div>
                     </div>
                     <div className="message">
                         <label className="frame-10">
@@ -101,7 +97,7 @@ export const Login: React.FC<LoginProps> = ({ toggleIsRegistering }) => {
                             </div>
                             <div className="icon"></div>
                         </label>
-                        <img className="line" alt="Line" src="/img/line-2-1.svg" />
+                        <div className="line"></div>
                     </div>
                 </div>
                 <button className="login-button" type="submit">

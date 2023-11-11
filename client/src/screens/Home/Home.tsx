@@ -1,10 +1,19 @@
-import React, { useState } from "react";
-import { Header } from "../../components/Header";
+import React, { useEffect } from 'react';
 import { Account } from "../../screens/Account"
 import { News } from "../../screens/News";
 import "./style.css";
+import { useUser } from '../../components/User/UserContext';
 
 export const Home = (): JSX.Element => {
+  // In your Home component
+  const { user, setUser } = useUser();
+
+  useEffect(() => {
+    const storedUserData = localStorage.getItem('userData');
+    if (storedUserData) {
+      setUser(JSON.parse(storedUserData));
+    }
+  }, [setUser]);
 
   return (
     <div className="home">

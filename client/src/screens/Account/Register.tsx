@@ -89,7 +89,7 @@ export const Register: React.FC<RegisterProps> = ({ toggleIsRegistering }) => {
     };
 
     return (
-        <div>
+        <div className="register">
             <div className="messages">
                 <div className="text-wrapper-13">Register</div>
             </div>
@@ -107,7 +107,7 @@ export const Register: React.FC<RegisterProps> = ({ toggleIsRegistering }) => {
                             </div>
                             <div className="icon"></div>
                         </label>
-                        <img className="line" alt="Line" src="/img/line-2-1.svg" />
+                        <div className="line"></div>
                     </div>
                     <div className="message">
                         <label className="frame-10">
@@ -121,7 +121,7 @@ export const Register: React.FC<RegisterProps> = ({ toggleIsRegistering }) => {
                             </div>
                             <div className="icon"></div>
                         </label>
-                        <img className="line" alt="Line" src="/img/line-2-1.svg" />
+                        <div className="line"></div>
                     </div>
                     <div className="message">
                         <label className="frame-10">
@@ -135,7 +135,7 @@ export const Register: React.FC<RegisterProps> = ({ toggleIsRegistering }) => {
                             </div>
                             <div className="icon"></div>
                         </label>
-                        <img className="line" alt="Line" src="/img/line-2-1.svg" />
+                        <div className="line"></div>
                     </div>
                     <div className="message">
                         <label className="frame-10">
@@ -149,7 +149,7 @@ export const Register: React.FC<RegisterProps> = ({ toggleIsRegistering }) => {
                             </div>
                             <div className="icon"></div>
                         </label>
-                        <img className="line" alt="Line" src="/img/line-2-1.svg" />
+                        <div className="line"></div>
                     </div>
                 </div>
                 <button className="create-button" type="submit">
