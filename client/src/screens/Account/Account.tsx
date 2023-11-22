@@ -1,25 +1,48 @@
-// Account.tsx
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom'; // Import useNavigate if you're using React Router
 import { Header } from "../../components/Header";
 import { Login } from "../Account/Login";
 import { Register } from "../Account/Register";
-import { Contact } from "../Account/Contact";
-import { host, logoutRoute } from "../../utils/APIRoutes";
+import { Contacts } from "./Contacts";
+import { host, logoutRoute, allUsersRoute } from "../../utils/APIRoutes";
 import axios from "axios";
 import "./style.css";
 
 export const Account = (): JSX.Element => {
   const [isRegistering, setIsRegistering] = useState(false);
-  // Initialize isLoggedIn to false to show the Login component by default
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [contacts, setContacts] = useState([]);
+  const [currentUser, setCurrentUser] = useState<any>(null); // Adjust the type as per your user data structure
+  const navigate = useNavigate(); // If you're using React Router
 
   useEffect(() => {
-    const userID = localStorage.getItem('userID');
-    if (userID) {
-      // Optionally, verify userID with your backend here
+    const storedUserData = localStorage.getItem('userData');
+    if (storedUserData) {
+      const userData = JSON.parse(storedUserData);
+      setCurrentUser(userData);
       setIsLoggedIn(true);
     }
   }, []);
+
+  useEffect(() => {
+    const fetchContacts = async () => {
+      if (currentUser) {
+        if (currentUser.isAvatarImageSet) {
+          try {
+            const data = await axios.get(`${allUsersRoute}/${currentUser._id}`);
+            setContacts(data.data);
+          } catch (error) {
+            console.error('Error fetching contacts:', error);
+          }
+        } else {
+          navigate("/setAvatar");
+        }
+      }
+    };
+
+    fetchContacts();
+  }, [currentUser, navigate]);
+
 
   const handleLoginSuccess = (userData: any) => {
     localStorage.setItem('userData', JSON.stringify(userData));
@@ -50,8 +73,6 @@ export const Account = (): JSX.Element => {
     }
   };
 
-
-
   // Determine what text to display in the header based on isLoggedIn and isRegistering
   const headerText = isLoggedIn ? "Contact" : isRegistering ? "Register" : "Login";
 
@@ -59,7 +80,7 @@ export const Account = (): JSX.Element => {
     <div className="account-widget">
       <Header className="header-instance" property1="title" text={headerText} />
       {isLoggedIn ? (
-        <Contact handleLogout={handleLogout} />
+        <Contacts contacts={contacts} handleLogout={handleLogout} />
       ) : (
         isRegistering ? (
           <Register toggleIsRegistering={toggleIsRegistering} />
