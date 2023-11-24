@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Logo from "../../logo.svg"; // Adjust the path as necessary
+import Logo from "../../logo.svg";
 
 interface User {
     username: string;
@@ -7,18 +7,19 @@ interface User {
     avatarImage: string;
 }
 
-interface Contact {
+export interface Contact {
     _id: string;
     username: string;
     avatarImage: string;
 }
 
 interface ContactProps {
-    handleLogout: () => Promise<void>;
+    handleLogout: () => void;
     contacts: Contact[];
+    setCurrentChat: (contact: Contact) => void; // Add this line
 }
 
-export const Contacts: React.FC<ContactProps> = ({ handleLogout, contacts }) => {
+export const Contacts: React.FC<ContactProps> = ({ handleLogout, contacts, setCurrentChat }) => {
     const [username, setUsername] = useState<string>("");
     const [email, setEmail] = useState<string>("");
     const [currentUserImage, setCurrentUserImage] = useState<string>("");
@@ -37,8 +38,9 @@ export const Contacts: React.FC<ContactProps> = ({ handleLogout, contacts }) => 
     }, []);
 
     const changeCurrentChat = (index: number, contact: Contact) => {
+        console.log("Changing chat to:", contact);
         setCurrentSelected(index);
-        // changeChat(contact); // Implement or remove as needed
+        setCurrentChat(contact);
     };
 
     return (

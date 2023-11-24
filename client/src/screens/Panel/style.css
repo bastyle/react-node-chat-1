@@ -1,4 +1,4 @@
-.news {
+.panel {
   align-items: flex-end;
   display: flex;
   flex-direction: column;
@@ -7,7 +7,7 @@
   width: 715px;
 }
 
-.news .news-widget {
+.panel .panel-widget {
   align-items: flex-start;
   border-radius: 18px;
   box-shadow: var(--shadows-shadow-widget);
@@ -19,14 +19,14 @@
   width: 715px;
 }
 
-.news .header-instance {
+.panel .header-instance {
   align-self: stretch !important;
   background-color: var(--news-operator-online) !important;
   flex: 0 0 auto !important;
   width: 100% !important;
 }
 
-.news .messages {
+.panel .messages {
   align-items: flex-start;
   align-self: stretch;
   background-color: #ffffff;
@@ -40,7 +40,7 @@
   width: 100%;
 }
 
-.news .frame-15 {
+.panel .frame-15 {
   align-items: flex-start;
   align-self: stretch;
   display: flex;
@@ -52,7 +52,7 @@
   width: 100%;
 }
 
-.news .subheader {
+.panel .subheader {
   align-items: flex-start;
   align-self: stretch;
   display: flex;
@@ -63,7 +63,7 @@
   width: 100%;
 }
 
-.news .frame-16 {
+.panel .frame-16 {
   align-items: center;
   align-self: stretch;
   display: flex;
@@ -73,7 +73,7 @@
   width: 100%;
 }
 
-.news .frame-17 {
+.panel .frame-17 {
   align-items: flex-start;
   display: flex;
   flex: 1;
@@ -83,7 +83,7 @@
   position: relative;
 }
 
-.news .text-wrapper-22 {
+.panel .text-wrapper-22 {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   align-self: stretch;
@@ -100,7 +100,7 @@
   text-overflow: ellipsis;
 }
 
-.news .text-wrapper-23 {
+.panel .text-wrapper-23 {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   align-self: stretch;
@@ -116,30 +116,157 @@
   text-overflow: ellipsis;
 }
 
-.news .frame-18 {
+.panel .frame-18 {
   flex: 0 0 auto;
   position: relative;
 }
 
-.news .design-component-instance-node {
+.panel .design-component-instance-node {
   align-self: stretch !important;
   flex: 0 0 auto !important;
   width: 100% !important;
 }
 
-.news .tile-instance {
+.panel .tile-instance {
   background-color: #95c839 !important;
   flex: 0 0 auto !important;
 }
 
-.news .tile-2 {
+.panel .tile-2 {
   color: #ffffff !important;
 }
 
-.news .tile-3 {
+.panel .tile-3 {
   flex: 0 0 auto !important;
 }
 
-.news .nav-instance {
+.panel .nav-instance {
   color: var(--news-operator-online) !important;
+}
+
+/*Chat*/
+/* General Styles for the Chat Container */
+.container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  max-width: 400px; /* Adjust as needed */
+  margin: auto;
+}
+
+/* Chat Header */
+.chat-header {
+  background-color: #f0f2f5;
+  border-bottom: 1px solid #e4e6eb;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.user-details {
+  display: flex;
+  align-items: center;
+}
+
+.avatar img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.username h3 {
+  margin: 0;
+  color: #050505;
+}
+
+/* Chat Messages */
+.chat-messages {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.message {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.sended {
+  justify-content: flex-end;
+}
+
+.recieved {
+  justify-content: flex-start;
+}
+
+.message .content {
+  max-width: 70%;
+  padding: 8px 12px;
+  border-radius: 18px;
+  color: white;
+}
+
+.sended .content {
+  background-color: #95cf48ff;
+}
+
+.recieved .content {
+  background-color: #e4e6eb;
+  color: black;
+}
+
+/* Chat Input */
+.chat-input {
+  border-top: 1px solid #e4e6eb;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.chat-input input {
+  flex-grow: 1;
+  border: none;
+  padding: 10px;
+  border-radius: 18px;
+  margin-right: 10px;
+}
+
+.chat-input button {
+  background-color: #95cf48ff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background-color: #86b93bff;
+}
+
+/* Scrollbar Styles (Optional) */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: #ccd0d5;
+  border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+      width: 100%;
+      max-width: none;
+      border-radius: 0;
+      box-shadow: none;
+  }
 }
