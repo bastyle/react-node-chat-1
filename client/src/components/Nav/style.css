@@ -1,0 +1,399 @@
+.nav {
+  align-items: flex-start;
+  background-color: #ffffff;
+  border-color: #f1f1f1;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-shadow: var(--shadows-shadow-menu);
+  display: flex;
+  flex-direction: column;
+  gap: 206px;
+  padding: 18px 20px;
+  position: relative;
+  width: 423px;
+}
+
+.nav .frame-14 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  padding: 0px 14px;
+  position: relative;
+  width: 100%;
+}
+
+.nav .element {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 2px;
+  justify-content: center;
+  position: relative;
+}
+
+.nav .icon-4 {
+  letter-spacing: 0;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.nav .text-wrapper-18 {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  font-family: "Inter", Helvetica;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 21px;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.nav .icon-5 {
+  letter-spacing: 0;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.nav .text-wrapper-19 {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  font-family: "Inter", Helvetica;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 21px;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.nav .notification {
+  align-items: center;
+  background-color: var(--intercom-notification-accent);
+  border: 1.2px solid;
+  border-color: var(--intercom-notification-border);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 18px;
+  justify-content: center;
+  left: 39px;
+  position: absolute;
+  top: -6px;
+  width: 18px;
+}
+
+.nav .icon-6 {
+  color: var(--intercom-notification-text);
+  font-family: "Inter", Helvetica;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 16.2px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.nav .icon-7 {
+  letter-spacing: 0;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.nav .text-wrapper-20 {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  font-family: "Inter", Helvetica;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 21px;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.nav .icon-8 {
+  letter-spacing: 0;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.nav .text-wrapper-21 {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  font-family: "Inter", Helvetica;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 21px;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.nav .icon-wrapper {
+  align-items: center;
+  background-color: var(--intercom-notification-accent);
+  border: 1.2px solid;
+  border-color: var(--intercom-notification-border);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 18px;
+  justify-content: center;
+  position: absolute;
+  width: 18px;
+}
+
+.nav .property-1-5-news {
+  color: #000000;
+  font-family: "Font Awesome 6 Pro-Light", Helvetica;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 29.7px;
+}
+
+.nav .property-1-5-messages {
+  color: #000000;
+  font-family: "Font Awesome 6 Pro-Light", Helvetica;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 29.7px;
+}
+
+.nav .property-1-5-home {
+  color: var(--intercom-brand-main);
+  font-family: "Font Awesome 6 Pro-Solid", Helvetica;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 31.1px;
+}
+
+.nav .property-1-5-help {
+  color: #000000;
+  font-family: "Font Awesome 6 Pro-Light", Helvetica;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 29.7px;
+}
+
+.nav .property-1-6-news {
+  color: #000000;
+  font-weight: 400;
+}
+
+.nav .property-1-6-messages {
+  color: #000000;
+  font-weight: 400;
+}
+
+.nav .property-1-6-home {
+  color: var(--intercom-brand-main);
+  font-weight: 600;
+}
+
+.nav .property-1-6-help {
+  color: #000000;
+  font-weight: 400;
+}
+
+.nav .property-1-7-news {
+  color: #000000;
+  font-family: "Font Awesome 6 Pro-Light", Helvetica;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 29.7px;
+}
+
+.nav .property-1-7-messages {
+  color: var(--intercom-brand-main);
+  font-family: "Font Awesome 6 Pro-Solid", Helvetica;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 29.7px;
+}
+
+.nav .property-1-7-home {
+  color: #000000;
+  font-family: "Font Awesome 6 Pro-Light", Helvetica;
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 31.1px;
+}
+
+.nav .property-1-7-help {
+  color: #000000;
+  font-family: "Font Awesome 6 Pro-Light", Helvetica;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 29.7px;
+}
+
+.nav .property-1-8-news {
+  color: #000000;
+  font-weight: 400;
+}
+
+.nav .property-1-8-messages {
+  color: var(--intercom-brand-main);
+  font-weight: 600;
+}
+
+.nav .property-1-8-home {
+  color: #000000;
+  font-weight: 400;
+}
+
+.nav .property-1-8-help {
+  color: #000000;
+  font-weight: 400;
+}
+
+.nav .property-1-9-news {
+  color: #000000;
+  font-family: "Font Awesome 6 Pro-Light", Helvetica;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 29.7px;
+}
+
+.nav .property-1-9-messages {
+  color: #000000;
+  font-family: "Font Awesome 6 Pro-Light", Helvetica;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 29.7px;
+}
+
+.nav .property-1-9-home {
+  color: #000000;
+  font-family: "Font Awesome 6 Pro-Light", Helvetica;
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 31.1px;
+}
+
+.nav .property-1-9-help {
+  color: var(--intercom-brand-main);
+  font-family: "Font Awesome 6 Pro-Solid", Helvetica;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 29.7px;
+}
+
+.nav .property-1-10-news {
+  color: #000000;
+  font-weight: 400;
+}
+
+.nav .property-1-10-messages {
+  color: #000000;
+  font-weight: 400;
+}
+
+.nav .property-1-10-home {
+  color: #000000;
+  font-weight: 400;
+}
+
+.nav .property-1-10-help {
+  color: var(--intercom-brand-main);
+  font-weight: 600;
+}
+
+.nav .property-1-11-news {
+  color: var(--intercom-brand-main);
+  font-family: "Font Awesome 6 Pro-Solid", Helvetica;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 29.7px;
+}
+
+.nav .property-1-11-messages {
+  color: #000000;
+  font-family: "Font Awesome 6 Pro-Light", Helvetica;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 29.7px;
+}
+
+.nav .property-1-11-home {
+  color: #000000;
+  font-family: "Font Awesome 6 Pro-Light", Helvetica;
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 31.1px;
+}
+
+.nav .property-1-11-help {
+  color: #000000;
+  font-family: "Font Awesome 6 Pro-Light", Helvetica;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 29.7px;
+}
+
+.nav .property-1-12-news {
+  color: var(--intercom-brand-main);
+  font-weight: 600;
+}
+
+.nav .property-1-12-messages {
+  color: #000000;
+  font-weight: 400;
+}
+
+.nav .property-1-12-home {
+  color: #000000;
+  font-weight: 400;
+}
+
+.nav .property-1-12-help {
+  color: #000000;
+  font-weight: 400;
+}
+
+.nav .property-1-13-news {
+  left: 376px;
+  top: 9px;
+}
+
+.nav .property-1-13-messages {
+  left: 58px;
+  top: 13px;
+}
+
+.nav .property-1-13-home {
+  left: 58px;
+  top: 13px;
+}
+
+.nav .property-1-13-help {
+  left: 278px;
+  top: 10px;
+}

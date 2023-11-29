@@ -25,34 +25,34 @@ mongoose.connect(process.env.MONGODB_URL,{
       });*/
 });
 //test endpoint 
-app.get("/api", (req, res)=>{
-    res.json({"msg":"hello world!"})
+app.get("/api", (req, res) => {
+  res.json({ "msg": "hello world!" })
 })
 
 app.use("/api/auth", userRoutes);
 app.use("/api/messages", messageRoutes);
-const server = app.listen(process.env.PORT, ()=>
-    console.log("server started on port: "+process.env.PORT+" ...")
+const server = app.listen(process.env.PORT, () =>
+  console.log("server started on port: " + process.env.PORT + " ...")
 );
 
 const io = socket(server, {
-    cors: {
-      origin: process.env.SOCKET_ORI,
-      credentials: true,
-    },
+  cors: {
+    origin: process.env.SOCKET_ORI,
+    credentials: true,
+  },
+});
+
+global.onlineUsers = new Map();
+io.on("connection", (socket) => {
+  global.chatSocket = socket;
+  socket.on("add-user", (userId) => {
+    onlineUsers.set(userId, socket.id);
   });
-  
-  global.onlineUsers = new Map();
-  io.on("connection", (socket) => {
-    global.chatSocket = socket;
-    socket.on("add-user", (userId) => {
-      onlineUsers.set(userId, socket.id);
-    });
-  
-    socket.on("send-msg", (data) => {
-      const sendUserSocket = onlineUsers.get(data.to);
-      if (sendUserSocket) {
-        socket.to(sendUserSocket).emit("msg-recieve", data.msg);
-      }
-    });
-  });  
+
+  socket.on("send-msg", (data) => {
+    const sendUserSocket = onlineUsers.get(data.to);
+    if (sendUserSocket) {
+      socket.to(sendUserSocket).emit("msg-recieve", data.msg);
+    }
+  });
+});  
