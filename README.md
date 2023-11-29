@@ -7,11 +7,6 @@ server folder contains nodeJS code for the backend
 cd server/
 npm start
 ```
-## api deployed on render
-https://comp231-back-end.onrender.com/
-### test
-https://comp231-back-end.onrender.com/api
-it must return {"msg":"hello world!"}
 
 ## client side (frontend)
 client folder contains reactJS code for the frontend application
@@ -20,3 +15,12 @@ client folder contains reactJS code for the frontend application
 cd client/
 npm start
 ```
+
+# Deployments (Render)
+
+## api deployed
+https://comp231-back-end.onrender.com/
+endpoint test https://comp231-back-end.onrender.com/api must return {"msg":"hello world!"}
+
+## website deployed
+https://comp231-front-end.onrender.com/
