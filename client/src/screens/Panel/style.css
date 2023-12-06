@@ -187,6 +187,7 @@
 .chat-messages {
     flex-grow: 1;
     padding: 10px;
+    min-height: 70vh;
 }
 
 .message {
