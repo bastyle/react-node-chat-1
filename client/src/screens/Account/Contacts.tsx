@@ -1,23 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { User, Contact, ContactProps } from '../../types/interfaces';
 import Logo from "../../logo.svg";
 
-interface User {
-    username: string;
-    email: string;
-    avatarImage: string;
-}
-
-export interface Contact {
-    _id: string;
-    username: string;
-    avatarImage: string;
-}
-
-interface ContactProps {
-    handleLogout: () => void;
-    contacts: Contact[];
-    setCurrentChat: (contact: Contact) => void; // Add this line
-}
 
 export const Contacts: React.FC<ContactProps> = ({ handleLogout, contacts, setCurrentChat }) => {
     const [username, setUsername] = useState<string>("");
@@ -33,12 +17,12 @@ export const Contacts: React.FC<ContactProps> = ({ handleLogout, contacts, setCu
             setEmail(userData.email);
             setCurrentUserImage(userData.avatarImage);
         } else {
-            console.log('No user data found. Redirecting to login...');
+            //console.log('No user data found. Redirecting to login...');
         }
     }, []);
 
     const changeCurrentChat = (index: number, contact: Contact) => {
-        console.log("Changing chat to:", contact);
+        //console.log("Changing chat to:", contact);
         setCurrentSelected(index);
         setCurrentChat(contact);
     };

@@ -1,17 +1,10 @@
 import React, { useState } from "react";
 import { Login } from "./Login";
 import { Register } from "./Register";
-import { Contact, Contacts } from "./Contacts";
+import { Contacts } from "./Contacts";
 import { Header } from "../../components/Header";
+import { AccountProps } from '../../types/interfaces';
 import "./style.css";
-
-interface AccountProps {
-  currentUser: any;
-  contacts: any[];
-  onLoginSuccess: (userData: any) => void;
-  onLogout: () => void;
-  setCurrentChat: (contact: Contact) => void; // Add this line
-}
 
 export const Account = ({ currentUser, contacts, onLoginSuccess, onLogout, setCurrentChat }: AccountProps): JSX.Element => {
   const [isRegistering, setIsRegistering] = useState(false);

@@ -1,27 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Header } from "../../components/Header";
 import { Nav } from "../../components/Nav";
-import { Contact } from "../Account/Contacts";
 import { ChatContainer } from "./ChatContainer";
 import { News } from "./News";
+import { User, PanelProps } from '../../types/interfaces';
 import "./style.css";
 
-interface PanelProps {
-  currentChat: Contact | null;
-  socket: any; // You can replace 'any' with a more specific type if available
-}
+export const Panel = ({ currentChat, socket, currentUser }: PanelProps): JSX.Element => {
+  const [userId, setUserId] = useState<string | null>(null);
 
-export const Panel = ({ currentChat, socket }: PanelProps): JSX.Element => {
-  console.log("Current Chat in Panel:", currentChat);
+  useEffect(() => {
+    if (currentUser) {
+      setUserId(currentUser._id);
+    } else {
+      setUserId(null);
+    }
+  }, [currentUser]);
+
+
+  //console.log("Current Chat in Panel:", currentChat);
+
   return (
     <div className="panel">
       <div className="panel-widget">
         <Header className="header-instance" property1="title" text="News" />
 
-        <div className="messages">
+        {userId && currentChat ? (
+          <div className="messages">
+            <ChatContainer currentChat={currentChat} socket={socket} userId={userId} />
+          </div>
+        ) : (
+          <div className="messages">
+            <News />
+          </div>
+        )}
 
-          {currentChat && <ChatContainer currentChat={currentChat} socket={socket} />}
-        </div>
         <Nav
           className="design-component-instance-node"
           divClassName="nav-instance"

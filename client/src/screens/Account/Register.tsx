@@ -2,15 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { RegisterProps } from '../../types/interfaces';
 import { registerRoute } from "../../utils/APIRoutes";
 import "./style.css";
 
-interface RegisterProps {
-    toggleIsRegistering: () => void;
-}
-
 export const Register: React.FC<RegisterProps> = ({ toggleIsRegistering }) => {
-    console.log("Rendering Register component");
+    //console.log("Rendering Register component");
     const navigate = useNavigate();
     const toastOptions = {
         position: "bottom-right" as any,
