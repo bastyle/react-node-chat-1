@@ -1,0 +1,1 @@
+export { ChipNews } from "./ChipNews";

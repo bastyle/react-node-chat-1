@@ -15,3 +15,12 @@ client folder contains reactJS code for the frontend application
 cd client/
 npm start
 ```
+
+# Deployments (Render)
+
+## api deployed
+https://comp231-back-end.onrender.com/
+endpoint test https://comp231-back-end.onrender.com/api must return {"msg":"hello world!"}
+
+## website deployed
+https://comp231-front-end.onrender.com/
