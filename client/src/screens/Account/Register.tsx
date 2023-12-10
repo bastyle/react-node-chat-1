@@ -2,15 +2,17 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import { RegisterProps } from '../../types/interfaces';
 import { registerRoute } from "../../utils/APIRoutes";
 import "./style.css";
+
 
 export const Register: React.FC<RegisterProps> = ({ toggleIsRegistering }) => {
     const navigate = useNavigate();
     const toastOptions = {
         position: "bottom-right" as any,
-        autoClose: 8000,
+        autoClose: 3000,
         pauseOnHover: true,
         draggable: true,
         theme: "dark" as any,
@@ -33,6 +35,8 @@ export const Register: React.FC<RegisterProps> = ({ toggleIsRegistering }) => {
     };
 
     const handleValidation = () => {
+        
+
         const { password, confirmPassword, username, email } = values;
         if (password !== confirmPassword) {
             toast.error(
@@ -60,7 +64,7 @@ export const Register: React.FC<RegisterProps> = ({ toggleIsRegistering }) => {
         return true;
     };
 
-    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    /*const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (handleValidation()) {
             const { email, username, password } = values;
@@ -81,6 +85,41 @@ export const Register: React.FC<RegisterProps> = ({ toggleIsRegistering }) => {
                 //navigate("/");
                 toggleIsRegistering();
             }
+        }
+    };*/
+
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        if (handleValidation()) {
+            const { email, username, password } = values;
+            const postData = {
+                email: email,
+                username: username,
+                password: password,
+            }
+            axios.post(registerRoute,postData )
+                .then((response) => {
+                    // Accessing a specific value within the response data
+                    //const respStatus = response.data.status;
+
+                    // Evaluate or process the specific value
+                    console.log('respStatus:', response.data.status);
+                    if (response.data.status === false) {
+                        console.log('false.......:'+response.data.msg);
+                        toast.error(response.data.msg, toastOptions);
+                    } else{
+                        localStorage.setItem(
+                            process.env.REACT_APP_LOCALHOST_KEY || 'defaultKey',
+                            JSON.stringify(response.data.user)
+                        );
+                        //navigate("/");
+                        toggleIsRegistering();
+                    }
+                })
+                .catch((error) => {
+                    // Handle error
+                    console.error('Error:', error.message);
+                });           
         }
     };
 
