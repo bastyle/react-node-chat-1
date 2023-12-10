@@ -6,11 +6,15 @@ const userRoutes = require("./routes/userRoutes");
 const messageRoutes = require("./routes/messages");
 const socket = require("socket.io");
 const OpenAI = require('openai');
+const nodemailer = require('nodemailer');
 require('dotenv').config()
 
 const app = express()
 app.use(cors())
 app.use(express.json())
+
+const WelcomeEmailSender = require('./utils/WelcomeEmailSender');
+const welcomeEmailSender = new WelcomeEmailSender();
 
 // OpenAI setup
 const openai = new OpenAI({
@@ -33,6 +37,7 @@ mongoose.connect(process.env.MONGODB_URL,{
 });
 //test endpoint 
 app.get("/api", (req, res) => {
+  welcomeEmailSender.sendWelcomeEmail("bastian.bastias@gmail.com", "Bastian");
   res.json({ "msg": "hello world!" })
 })
 
@@ -88,3 +93,6 @@ io.on("connection", (socket) => {
     }
   });
 });  
+
+// mailing
+
