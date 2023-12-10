@@ -108,12 +108,12 @@ export const Tile = ({
                       <ChipNews
                         className={chipNewsChipNewsClassName}
                         divClassName={chipNewsDivClassName}
-                        text="Support"
+                        text="Hoi Kit Fan 🤫"
                       />
                       <ChipNews
                         className={chipNewsChipNewsClassNameOverride}
                         divClassName={chipNewsDivClassNameOverride}
-                        text="New feature"
+                        text="Bastian Bastias Sanchez 🤫"
                       />
                     </>
                   )}

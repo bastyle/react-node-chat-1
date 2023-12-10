@@ -1,6 +1,3 @@
-// News.tsx
-
-import React from "react";
 import { Tile } from "../../components/Tile";
 import image1 from "../../static/img/image-4-1.png";
 import image2 from "../../static/img/image-4-2.png";
@@ -38,8 +35,8 @@ export const News = (): JSX.Element => {
                         className="design-component-instance-node"
                         image={image2}
                         property1="news"
-                        text="Introducing a new file content source for Fin - PDF Uploads"
-                        text1="When you migrate your articles to News using our Zendesk migration tool – we&#39;ll now automatically create URL redirects from your previous URLs to your new News articles."
+                        text="This project was created by 🤫?"
+                        text1="Despite being a group of six, only two members have actually completed the entire project, especially the documentation. 🤫"
                     />
 
                 </div>

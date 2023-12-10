@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import { BsEmojiSmileFill } from "react-icons/bs";
+import { ChatInputProps } from '../../types/interfaces';
 import { IoMdSend } from "react-icons/io";
 import Picker, { EmojiClickData } from "emoji-picker-react";
-
-interface ChatInputProps {
-    handleSendMsg: (msg: string) => void;
-}
+import { FaRegSmileBeam } from 'react-icons/fa';
 
 const ChatInput: React.FC<ChatInputProps> = ({ handleSendMsg }) => {
     const [msg, setMsg] = useState<string>("");
     const [showEmojiPicker, setShowEmojiPicker] = useState<boolean>(false);
+
     const handleEmojiPickerhideShow = () => {
         setShowEmojiPicker(!showEmojiPicker);
     };
@@ -30,23 +28,27 @@ const ChatInput: React.FC<ChatInputProps> = ({ handleSendMsg }) => {
 
     return (
         <>
-            <div className="button-container">
-                <div className="emoji">
-                    <BsEmojiSmileFill onClick={handleEmojiPickerhideShow} />
-                    {showEmojiPicker && <Picker onEmojiClick={handleEmojiClick} />}
+            <div className="input-emoji-container">
+                <div className="emoji-icon">
+                    <FaRegSmileBeam onClick={handleEmojiPickerhideShow} />
                 </div>
+                {showEmojiPicker && (
+                    <div className="emoji-picker">
+                        <Picker onEmojiClick={handleEmojiClick} />
+                    </div>
+                )}
+                <form className="input-container" onSubmit={sendChat}>
+                    <input
+                        type="text"
+                        placeholder="type your message here"
+                        onChange={(e) => setMsg(e.target.value)}
+                        value={msg}
+                    />
+                    <button type="submit">
+                        <IoMdSend />
+                    </button>
+                </form>
             </div>
-            <form className="input-container" onSubmit={sendChat}>
-                <input
-                    type="text"
-                    placeholder="type your message here"
-                    onChange={(e) => setMsg(e.target.value)}
-                    value={msg}
-                />
-                <button type="submit">
-                    <IoMdSend />
-                </button>
-            </form>
         </>
     );
 };

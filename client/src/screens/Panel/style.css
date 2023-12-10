@@ -146,105 +146,144 @@
 
 /*Chat*/
 /* General Styles for the Chat Container */
-.container {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  max-width: 400px; /* Adjust as needed */
-  margin: auto;
+.chat-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Set width to 100% of its parent */
+    max-width: none;
+    margin: auto;
 }
 
 /* Chat Header */
 .chat-header {
-  background-color: #f0f2f5;
-  border-bottom: 1px solid #e4e6eb;
-  padding: 10px;
-  display: flex;
-  align-items: center;
+    background-color: #f0f2f5;
+    border-bottom: 1px solid #e4e6eb;
+    padding: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .user-details {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .avatar img {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
 }
 
 .username h3 {
-  margin: 0;
-  color: #050505;
+    margin: 0;
+    color: #050505;
 }
 
 /* Chat Messages */
 .chat-messages {
-  flex-grow: 1;
-  padding: 10px;
-  overflow-y: auto;
+    flex-grow: 1;
+    padding: 10px;
+    min-height: 70vh;
 }
 
 .message {
-  margin-bottom: 10px;
-  display: flex;
+    margin-bottom: 10px;
+    display: flex;
 }
 
 .sended {
-  justify-content: flex-end;
+  align-items: flex-end!important;
 }
 
 .recieved {
-  justify-content: flex-start;
+    justify-content: flex-start;
 }
 
 .message .content {
-  max-width: 70%;
-  padding: 8px 12px;
-  border-radius: 18px;
-  color: white;
+    max-width: 70%;
+    padding: 8px 12px;
+    border-radius: 18px;
+    color: white;
 }
 
 .sended .content {
-  background-color: #95cf48ff;
+    background-color: #95cf48ff;
 }
 
 .recieved .content {
-  background-color: #e4e6eb;
-  color: black;
+    background-color: #e4e6eb;
+    color: black;
 }
 
 /* Chat Input */
 .chat-input {
-  border-top: 1px solid #e4e6eb;
-  padding: 10px;
+    border-top: 1px solid #e4e6eb;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%; 
+}
+
+.input-emoji-container {
   display: flex;
   align-items: center;
+  width: 100%;
+  position: relative; 
 }
 
-.chat-input input {
-  flex-grow: 1;
-  border: none;
-  padding: 10px;
-  border-radius: 18px;
-  margin-right: 10px;
+.input-emoji-container .input-container {
+  width: 100%; 
+  display: flex; 
+  flex-grow: 1; 
+  margin-right: 10px; 
 }
 
-.chat-input button {
-  background-color: #95cf48ff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 18px;
+.emoji {
+  bottom: 100%; /* Position it above the input field */
+  left: 0;
+  z-index: 1; /* Higher z-index to float above other elements */
   cursor: pointer;
 }
 
+.emoji-icon {
+  /* Styles for the emoji icon container */
+  margin-right: 10px;
+  /* Other styling as needed */
+}
+
+.emoji-picker {
+  /* Absolute positioning for the emoji picker */
+  position: absolute;
+  bottom: 100%; /* Position it above the input field */
+  left: 0;
+  z-index: 10; /* Ensure it's above other elements */
+  /* Additional styling as needed */
+}
+
+.chat-input input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 18px;
+    margin-right: 10px;
+    width: calc(100% - 20px); /* Subtract the width of the button and any margins */
+}
+
+.chat-input button {
+    background-color: #95cf48ff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
 .chat-input button:hover {
-  background-color: #86b93bff;
+    background-color: #86b93bff;
 }
 
 /* Scrollbar Styles (Optional) */
@@ -261,12 +300,23 @@
   background-color: white;
 }
 
+.panel, .panel-widget {
+  overflow-y: auto; /* Enable vertical scrolling */
+  height: 100vh; /* Set a fixed height */
+}
+
+.panel .messages {
+  overflow-y: auto; /* Remove independent scrolling */
+
+}
+
+
 /* Responsive Design */
 @media (max-width: 600px) {
-  .container {
-      width: 100%;
-      max-width: none;
-      border-radius: 0;
-      box-shadow: none;
-  }
+    .container {
+        width: 100%;
+        max-width: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
 }

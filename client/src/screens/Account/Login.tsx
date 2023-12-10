@@ -3,16 +3,12 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { loginRoute } from "../../utils/APIRoutes";
 import { ToastContainer, toast } from "react-toastify";
+import { LoginProps } from '../../types/interfaces';
 import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
 
-interface LoginProps {
-    toggleIsRegistering: () => void;
-    onLoginSuccess: (userData: any) => void;
-}
-
 export const Login: React.FC<LoginProps> = ({ toggleIsRegistering, onLoginSuccess }) => {
-    console.log("Rendering Login component");
+
     const navigate = useNavigate();
     const [values, setValues] = useState({ username: "", password: "" });
     const toastOptions = {

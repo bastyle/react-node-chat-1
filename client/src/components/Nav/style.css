@@ -397,3 +397,7 @@
   left: 278px;
   top: 10px;
 }
+
+.nav .element {
+  cursor: pointer;
+}

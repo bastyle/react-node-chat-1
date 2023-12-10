@@ -1,118 +1,124 @@
 import React, { useState, useEffect, useRef } from "react";
 import ChatInput from "./ChatInput";
-import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import { sendMessageRoute, recieveMessageRoute } from "../../utils/APIRoutes";
+import { ChatContainerProps, Message, IncomingMessage } from '../../types/interfaces';
 
-interface ChatContainerProps {
-    currentChat: {
-        _id: string;
-        username: string;
-        avatarImage: string;
-    };
-    socket: any; // Replace 'any' with the correct type for your socket
-}
-
-interface Message {
-    fromSelf: boolean;
-    message: string;
-}
-
-export const ChatContainer: React.FC<ChatContainerProps> = ({ currentChat, socket }): JSX.Element => {
+export const ChatContainer: React.FC<ChatContainerProps> = ({ currentChat, socket, userId }): JSX.Element => {
     const [messages, setMessages] = useState<Message[]>([]);
-    const scrollRef = useRef<HTMLDivElement>(null);
-    const [arrivalMessage, setArrivalMessage] = useState<Message | null>(null);
+    const messagesEndRef = useRef<HTMLDivElement>(null);
 
+    // Fetch messages initially
     useEffect(() => {
-        console.log("Current chat changed:", currentChat);
         const fetchData = async () => {
-            const localStorageData = localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY || '');
-            if (localStorageData) {
-                const data = JSON.parse(localStorageData);
+            try {
                 const response = await axios.post(recieveMessageRoute, {
-                    from: data._id,
+                    from: userId,
                     to: currentChat._id,
                 });
                 setMessages(response.data);
+            } catch (error) {
+                console.error("Failed to fetch messages:", error);
             }
         };
-        if (currentChat) {
-            fetchData();
-        }
-    }, [currentChat]);
+        fetchData();
+    }, [currentChat, userId]);
 
-    const handleSendMsg = async (msg: string) => {
-        const localStorageData = localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY || '');
-        if (localStorageData) {
-            const data = JSON.parse(localStorageData);
+    // Handle sending messages
+    const handleSendMsg = async (text: string) => {
+        try {
+            // Send message to the server
+            const response = await axios.post(sendMessageRoute, {
+                from: userId,
+                to: currentChat._id,
+                message: text,
+            });
+
+            // Update local state
+            const newMessage: Message = {
+                _id: response.data._id, // Assume the server responds with the message ID
+                fromSelf: true,
+                message: text,
+            };
+            setMessages(prevMessages => [...prevMessages, newMessage]);
+
+            // Emit message to other users
             socket.current.emit("send-msg", {
                 to: currentChat._id,
-                from: data._id,
-                msg,
+                from: userId,
+                msg: text,
             });
-            await axios.post(sendMessageRoute, {
-                from: data._id,
-                to: currentChat._id,
-                message: msg,
-            });
-
-            const msgs = [...messages];
-            msgs.push({ fromSelf: true, message: msg });
-            setMessages(msgs);
+        } catch (error) {
+            console.error("Failed to send message:", error);
         }
     };
 
+    // Listen for incoming messages
     useEffect(() => {
+        const messageListener = (msg: IncomingMessage) => {
+            const newMessage: Message = {
+                fromSelf: msg.from === userId,
+                message: msg.msg,
+            };
+            setMessages(prevMessages => [...prevMessages, newMessage]);
+        };
+
         if (socket.current) {
-            socket.current.on("msg-recieve", (msg: string) => {
-                setArrivalMessage({ fromSelf: false, message: msg });
-            });
+            socket.current.on("msg-recieve", messageListener);
         }
-    }, [socket.current]);
+
+        return () => {
+            if (socket.current) {
+                socket.current.off("msg-recieve", messageListener);
+            }
+        };
+    }, [socket, userId]);
+
 
     useEffect(() => {
-        if (arrivalMessage) {
-            setMessages((prev) => [...prev, arrivalMessage]);
+        if (isScrollAtBottom()) {
+            messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
         }
-    }, [arrivalMessage]);
-
-    useEffect(() => {
-        scrollRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages]);
 
+    // Helper function to check if the user has scrolled to the bottom
+    function isScrollAtBottom() {
+        const container = document.querySelector('.chat-messages');
+        if (container) {
+            return container.scrollHeight - container.scrollTop === container.clientHeight;
+        }
+        return false;
+    }
+
     return (
-        <div className="container">
+        <div className="chat-container">
             <div className="chat-header">
                 <div className="user-details">
                     <div className="avatar">
-                        <img
-                            src={`data:image/svg+xml;base64,${currentChat.avatarImage}`}
-                            alt=""
-                        />
+                        <img src={`data:image/svg+xml;base64,${currentChat.avatarImage}`} alt={`${currentChat.username}'s avatar`} />
                     </div>
                     <div className="username">
                         <h3>{currentChat.username}</h3>
                     </div>
                 </div>
-
             </div>
             <div className="chat-messages">
-                {messages.map((message) => {
-                    return (
-                        <div ref={scrollRef} key={uuidv4()}>
-                            <div
-                                className={`message ${message.fromSelf ? "sended" : "recieved"
-                                    }`}
-                            >
-                                <div className="content ">
-                                    <p>{message.message}</p>
-                                </div>
-                            </div>
+                {messages.map((message, index) => (
+                    <div key={index} className={`message ${message.fromSelf ? "sended" : "recieved"}`}>
+                        <div className="content">
+                            <p>{message.message}</p>
                         </div>
-                    );
-                })}
+                    </div>
+                ))}
+                <div ref={messagesEndRef} />
             </div>
-            <ChatInput handleSendMsg={handleSendMsg} />
+
+            <div className="chat-input">
+                <ChatInput handleSendMsg={handleSendMsg} />
+            </div>
         </div>
+
     );
 };
+
+export default ChatContainer;

@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Account } from "../Account";
 import { Panel } from "../Panel";
-import { Contact } from "../Account/Contacts";
 import axios from "axios";
 import { allUsersRoute, host } from "../../utils/APIRoutes";
 import { io, Socket } from "socket.io-client";
+import { User, Contact } from '../../types/interfaces';
 import "./style.css";
-
-interface User {
-  _id: string;
-}
 
 export const Home = (): JSX.Element => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [contacts, setContacts] = useState<any[]>([]);
   const [currentChat, setCurrentChatState] = useState<Contact | null>(null);
   const [socket, setSocket] = useState<Socket | null>(null);
+
 
   useEffect(() => {
     const storedUserData = localStorage.getItem('userData');
@@ -37,7 +34,6 @@ export const Home = (): JSX.Element => {
 
   /*debug*/
   useEffect(() => {
-    console.log("Current Chat Updated:", currentChat);
   }, [currentChat]);
 
   const fetchContacts = async (userId: string) => {
@@ -61,7 +57,6 @@ export const Home = (): JSX.Element => {
   };
 
   const setCurrentChat = (contact: Contact) => {
-    console.log("Setting current chat to:", contact);
     setCurrentChatState(contact); // Correctly updates the state
   };
 
@@ -70,7 +65,11 @@ export const Home = (): JSX.Element => {
       <div className="overlap-group-wrapper">
         <div className="overlap-group">
           <div className="intercom">
-            <Panel currentChat={currentChat} socket={socket} />
+            <Panel
+              currentChat={currentChat}
+              socket={socket}
+              currentUser={currentUser}
+            />
           </div>
           <div className="intercom-widget-wrapper">
             <Account
