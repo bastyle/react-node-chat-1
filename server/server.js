@@ -37,7 +37,7 @@ mongoose.connect(process.env.MONGODB_URL,{
 });
 //test endpoint 
 app.get("/api", (req, res) => {
-  welcomeEmailSender.sendWelcomeEmail("bastian.bastias@gmail.com", "Bastian");
+  //welcomeEmailSender.sendWelcomeEmail("bastian.bastias@gmail.com", "Bastian");
   res.json({ "msg": "hello world!" })
 })
 
