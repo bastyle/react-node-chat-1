@@ -6,18 +6,19 @@ Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcN
 import PropTypes from "prop-types";
 import React from "react";
 import "./style.css";
+import IconSvg from "../../../src/ai-svgrepo-com.svg"
 
-export const Nav = ({ property1, notification, className, iconClassName, divClassName }) => {
+export const Nav = ({ property1, notification, className, iconClassName, divClassName, onNavChange }) => {
   return (
     <div className={`nav ${className}`}>
       <div className="frame-14">
-        <div className="element">
-          <div className={`icon-4 property-1-5-${property1}`}></div>
-          <div className={`text-wrapper-18 property-1-6-${property1}`}>Home</div>
-        </div>
-        <div className="element">
+        <div className="element" onClick={() => onNavChange("messenger")}>
           <div className={`icon-5 property-1-7-${property1}`}></div>
-          <div className={`text-wrapper-19 property-1-8-${property1}`}>Messages</div>
+          <div className={`text-wrapper-18 property-1-6-${property1}`}>Messenger</div>
+        </div>
+        <div className="element" onClick={() => onNavChange("openai")}>
+          <div className={`icon-5 property-1-7-${property1}`}><img src={IconSvg} alt="AI Icon" /></div>
+          <div className={`text-wrapper-19 property-1-8-${property1}`}>AI</div>
           {notification && property1 === "messages" && (
             <div className="notification">
               <div className="icon-6">1</div>
@@ -30,16 +31,14 @@ export const Nav = ({ property1, notification, className, iconClassName, divClas
         </div>
         <div className="element">
           <div
-            className={`icon-8 property-1-11-${property1} ${
-              !notification || property1 === "messages" ? iconClassName : undefined
-            }`}
+            className={`icon-8 property-1-11-${property1} ${!notification || property1 === "messages" ? iconClassName : undefined
+              }`}
           >
             
           </div>
           <div
-            className={`text-wrapper-21 property-1-12-${property1} ${
-              !notification || property1 === "messages" ? divClassName : undefined
-            }`}
+            className={`text-wrapper-21 property-1-12-${property1} ${!notification || property1 === "messages" ? divClassName : undefined
+              }`}
           >
             News
           </div>
@@ -57,4 +56,5 @@ export const Nav = ({ property1, notification, className, iconClassName, divClas
 Nav.propTypes = {
   property1: PropTypes.oneOf(["messages", "home", "news", "help"]),
   notification: PropTypes.bool,
+  onNavChange: PropTypes.func,
 };

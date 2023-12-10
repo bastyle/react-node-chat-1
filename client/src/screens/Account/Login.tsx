@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
 
 export const Login: React.FC<LoginProps> = ({ toggleIsRegistering, onLoginSuccess }) => {
-    //console.log("Rendering Login component");
+
     const navigate = useNavigate();
     const [values, setValues] = useState({ username: "", password: "" });
     const toastOptions = {

@@ -17,12 +17,11 @@ export const Contacts: React.FC<ContactProps> = ({ handleLogout, contacts, setCu
             setEmail(userData.email);
             setCurrentUserImage(userData.avatarImage);
         } else {
-            //console.log('No user data found. Redirecting to login...');
+            console.log('No user data found. Redirecting to login...');
         }
     }, []);
 
     const changeCurrentChat = (index: number, contact: Contact) => {
-        //console.log("Changing chat to:", contact);
         setCurrentSelected(index);
         setCurrentChat(contact);
     };

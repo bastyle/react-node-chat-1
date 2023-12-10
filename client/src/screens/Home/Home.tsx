@@ -34,7 +34,6 @@ export const Home = (): JSX.Element => {
 
   /*debug*/
   useEffect(() => {
-    console.log("Current Chat Updated:", currentChat);
   }, [currentChat]);
 
   const fetchContacts = async (userId: string) => {
@@ -58,7 +57,6 @@ export const Home = (): JSX.Element => {
   };
 
   const setCurrentChat = (contact: Contact) => {
-    console.log("Setting current chat to:", contact);
     setCurrentChatState(contact); // Correctly updates the state
   };
 

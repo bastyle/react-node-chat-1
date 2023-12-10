@@ -7,7 +7,6 @@ import { registerRoute } from "../../utils/APIRoutes";
 import "./style.css";
 
 export const Register: React.FC<RegisterProps> = ({ toggleIsRegistering }) => {
-    //console.log("Rendering Register component");
     const navigate = useNavigate();
     const toastOptions = {
         position: "bottom-right" as any,
