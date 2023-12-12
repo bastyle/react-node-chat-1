@@ -36,9 +36,9 @@ mongoose.connect(process.env.MONGODB_URL,{
       });*/
 });
 //test endpoint 
-app.get("/api", (req, res) => {
-  //welcomeEmailSender.sendWelcomeEmail("bastian.bastias@gmail.com", "Bastian");
-  res.json({ "msg": "hello world!" })
+app.get("/api/health", (req, res) => {
+  console.log("hello world...")
+  res.json({ "msg": "OK" })
 })
 
 app.use("/api/auth", userRoutes);
@@ -94,5 +94,6 @@ io.on("connection", (socket) => {
   });
 });  
 
+module.exports = server
 // mailing
 
