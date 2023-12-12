@@ -1,3 +1,25 @@
+/*
+=========================================================================================
+  Developer Comments
+=========================================================================================
+  File: server.js
+  Description: Backend server for the WeCanTalk (Real-Time Chat App)
+  Author: Bastian Bastias
+  Created: 2023
+  Last Modified: 12-12-2023
+=========================================================================================
+  Notes:
+  - This file serves as the main backend server for the Real-Time Chat App.
+  - It uses Express.js, Mongoose, Socket.IO, OpenAI, and nodemailer.
+  - Ensure proper configuration of environment variables in the .env file.
+  - For detailed documentation, refer to the README.md file.
+=========================================================================================
+  To Do:
+  - Add more features and improve the existing ones.
+  - Enhance error handling and security measures.
+  - Refactor code for better readability and maintainability.
+=========================================================================================
+*/
 const express = require('express')
 const cors = require("cors")
 const { default: mongoose } = require('mongoose')

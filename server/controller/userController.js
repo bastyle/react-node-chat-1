@@ -1,3 +1,25 @@
+/*
+=========================================================================================
+  Developer Comments
+=========================================================================================
+  File: userController.js
+  Description: Controller functions for user authentication and related operations
+  Author: Your Name
+  Created: Date
+  Last Modified: Date
+=========================================================================================
+  Notes:
+  - This file contains controller functions for user authentication, registration, and more.
+  - It interacts with the MongoDB database using the User model.
+  - Passwords are securely hashed using bcrypt for security.
+  - Ensure proper error handling and response messages.
+=========================================================================================
+  To Do:
+  - Implement additional user-related features and improvements.
+  - Enhance error handling for robust user authentication.
+  - Add validation checks for user input.
+=========================================================================================
+*/
 const User = require("../model/userModel");
 const bcrypt = require("bcrypt");
 
