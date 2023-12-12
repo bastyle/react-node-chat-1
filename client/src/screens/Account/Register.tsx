@@ -35,7 +35,7 @@ export const Register: React.FC<RegisterProps> = ({ toggleIsRegistering }) => {
     };
 
     const handleValidation = () => {
-        
+
 
         const { password, confirmPassword, username, email } = values;
         if (password !== confirmPassword) {
@@ -97,7 +97,7 @@ export const Register: React.FC<RegisterProps> = ({ toggleIsRegistering }) => {
                 username: username,
                 password: password,
             }
-            axios.post(registerRoute,postData )
+            axios.post(registerRoute, postData)
                 .then((response) => {
                     // Accessing a specific value within the response data
                     //const respStatus = response.data.status;
@@ -105,9 +105,9 @@ export const Register: React.FC<RegisterProps> = ({ toggleIsRegistering }) => {
                     // Evaluate or process the specific value
                     console.log('respStatus:', response.data.status);
                     if (response.data.status === false) {
-                        console.log('false.......:'+response.data.msg);
+                        console.log('false.......:' + response.data.msg);
                         toast.error(response.data.msg, toastOptions);
-                    } else{
+                    } else {
                         localStorage.setItem(
                             process.env.REACT_APP_LOCALHOST_KEY || 'defaultKey',
                             JSON.stringify(response.data.user)
@@ -119,7 +119,7 @@ export const Register: React.FC<RegisterProps> = ({ toggleIsRegistering }) => {
                 .catch((error) => {
                     // Handle error
                     console.error('Error:', error.message);
-                });           
+                });
         }
     };
 
@@ -195,6 +195,7 @@ export const Register: React.FC<RegisterProps> = ({ toggleIsRegistering }) => {
                     Already have an account ? <button onClick={toggleIsRegistering}>Login.</button>
                 </span>
             </form>
+            <ToastContainer />
         </div>
     );
 };
