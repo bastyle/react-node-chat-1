@@ -56,11 +56,10 @@ app.post("/api/openai", async (req, res) => {
       model: "gpt-3.5-turbo",
       messages: messages,
     });
-
     // Accessing the message content correctly
-
     const aiMessage = response.choices[0].message.content;
-
+    //console.log("aiMessage:: "+aiMessage)
+    //console.log(response)
     res.json(response);
   } catch (error) {
     console.error("Error testing OpenAI API", error);
