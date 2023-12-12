@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+require('dotenv').config()
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -21,11 +22,11 @@ const userSchema = new mongoose.Schema({
   },
   isAvatarImageSet: {
     type: Boolean,
-    default: false,
+    default: true,
   },
   avatarImage: {
     type: String,
-    default: "",
+    default: process.env.AVATAR_IMG,
   },
 });
 
