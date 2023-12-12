@@ -195,7 +195,6 @@ export const Register: React.FC<RegisterProps> = ({ toggleIsRegistering }) => {
                     Already have an account ? <button onClick={toggleIsRegistering}>Login.</button>
                 </span>
             </form>
-            <ToastContainer />
         </div>
     );
 };
